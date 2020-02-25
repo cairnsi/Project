@@ -5,6 +5,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var credentials = require('./credentials.js');
+var request = require('request');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ function setContext(req, res){
 	context.name = req.session.name;
 	context.cityName = req.session.cityName;
 	context.countryCode = req.session.countryCode;
+	context.temperature = req.session.temperature;
 	return context;
 }
 
@@ -44,11 +46,23 @@ app.post('/', function(req,res){
 	  req.session.cityName = req.body.cityName;
 	  req.session.countryCode = req.body.countryCode;
   }
-if(checkSession(req,res)){
+  if(checkSession(req,res)){
 	  return;
   }
-  var context = setContext(req,res);
-  res.render('home',context);
+  
+  request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
+    if(!err && response.statusCode < 400){
+      req.session.temperature = Math.floor(body.main.temp - 273)+ " C";
+	  
+	  var context = setContext(req,res);
+      res.render('home',context);
+    } else {
+      if(response){
+        console.log(response.statusCode);
+      }
+      next(err);
+    }
+  });
 });
 
 app.get('/professional',function(req,res){
