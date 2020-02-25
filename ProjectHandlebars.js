@@ -22,11 +22,19 @@ function checkSession(req, res){
 	return false;
 }
 
+function setContext(req, res){
+	var context{};
+	context.name = req.session.name;
+	context.cityName = req.session.cityName;
+	context.countryCode = req.session.countryCode;
+	return context;
+}
+
 app.get('/',function(req,res){
   if(checkSession(req,res)){
 	  return;
   }
-  var context= {};
+  var context = setContext(req,res);
   res.render('home',context);
 });
 
@@ -39,7 +47,7 @@ app.post('/', function(req,res){
 if(checkSession(req,res)){
 	  return;
   }
-  var context = {};
+  var context = setContext(req,res);
   res.render('home',context);
 });
 
