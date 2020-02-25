@@ -17,7 +17,8 @@ app.set('port', 3128);
 
 function checkSession(req, res){
 	if(!req.session.name){
-		res.render('getSession');
+		var context={};
+		res.render('getSession',context);
 		return true;
 	}
 	return false;
@@ -28,7 +29,7 @@ function setContext(req, res){
 	context.name = req.session.name;
 	context.cityName = req.session.cityName;
 	context.countryCode = req.session.countryCode;
-	context.temperature = req.session.temperature;
+	context.yourTemperature = req.session.yourTemperature;
 	return context;
 }
 
@@ -53,13 +54,15 @@ app.post('/', function(req,res){
   request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
     if(!err && response.statusCode < 400){
 	  var response = JSON.parse(body);
-      req.session.temperature = Math.floor(response.main.temp - 273)+ " C";
+      req.session.yourTemperature = Math.floor(response.main.temp - 273)+ " C";
 	  
 	  var context = setContext(req,res);
       res.render('home',context);
     } else {
-      if(response){
-        console.log(response.statusCode);
+      if(response.statusCode >= 400 && response.statusCode < 500){
+        var context= {};
+		context.error = "City not found. Please try again";
+		res.render('getSession',context);
       }
       next(err);
     }
