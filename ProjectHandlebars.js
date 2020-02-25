@@ -30,6 +30,19 @@ app.get('/',function(req,res){
   res.render('home',context);
 });
 
+app.post('/', function(req,res){
+  if(req.body.Name&& req.body.cityName && req.body.countryCode){
+	  req.session.name = req.body.Name;
+	  req.session.cityName = req.body.cityName;
+	  req.session.countryCode = req.body.countryCode;
+  }
+  if(checkSession(req,res){
+	  return;
+  }
+  var context = {};
+  res.render('home',context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
