@@ -1,0 +1,19 @@
+<h1>POST Request Received</h1>
+<h3>URL input data</h3>
+<table>
+	{{#each urlInput}}
+		<tr>
+			<td>{{this.name}}</td>
+			<td>{{this.value}}</td>
+		</tr>
+	{{/each}}
+</table>
+<h3>Body input data</h3>
+<table>
+	{{#each bodyInput}}
+		<tr>
+			<td>{{this.name}}</td>
+			<td>{{this.value}}</td>
+		</tr>
+	{{/each}}
+</table>
