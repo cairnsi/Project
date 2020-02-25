@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.set('port', 3128);
 
 app.get('/',function(req,res){
-  
+  var context= {};
   res.render('home',context);
 });
 
