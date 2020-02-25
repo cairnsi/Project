@@ -14,7 +14,14 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3128);
 
+function checkSession(req, res){
+	if(!req.session.name){
+		reg.render('getSession');
+	}
+}
+
 app.get('/',function(req,res){
+  checkSession(req,res);
   var context= {};
   res.render('home',context);
 });
