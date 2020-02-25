@@ -17,11 +17,15 @@ app.set('port', 3128);
 function checkSession(req, res){
 	if(!req.session.name){
 		res.render('getSession');
+		return true;
 	}
+	return false;
 }
 
 app.get('/',function(req,res){
-  checkSession(req,res);
+  if(checkSession(req,res)){
+	  return;
+  }
   var context= {};
   res.render('home',context);
 });
