@@ -16,7 +16,7 @@ app.set('port', 3128);
 
 function checkSession(req, res){
 	if(!req.session.name){
-		reg.render('getSession');
+		res.render('getSession');
 	}
 }
 
