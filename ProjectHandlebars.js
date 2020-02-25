@@ -36,7 +36,7 @@ app.post('/', function(req,res){
 	  req.session.cityName = req.body.cityName;
 	  req.session.countryCode = req.body.countryCode;
   }
-  if(checkSession(req,res){
+if(checkSession(req,res)){
 	  return;
   }
   var context = {};
