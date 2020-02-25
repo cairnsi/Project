@@ -51,6 +51,30 @@ if(checkSession(req,res)){
   res.render('home',context);
 });
 
+app.get('/professional',function(req,res){
+  if(checkSession(req,res)){
+	  return;
+  }
+  var context = setContext(req,res);
+  res.render('professional',context);
+});
+
+app.get('/hobbies',function(req,res){
+  if(checkSession(req,res)){
+	  return;
+  }
+  var context = setContext(req,res);
+  res.render('hobbies',context);
+});
+
+app.get('/traveled',function(req,res){
+  if(checkSession(req,res)){
+	  return;
+  }
+  var context = setContext(req,res);
+  res.render('traveled',context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
