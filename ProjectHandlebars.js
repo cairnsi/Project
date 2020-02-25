@@ -52,7 +52,7 @@ app.post('/', function(req,res){
   
   request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
     if(!err && response.statusCode < 400){
-      req.session.temperature = body;
+      req.session.temperature = Math.floor(body.main.temp - 273)+ " C";
 	  
 	  var context = setContext(req,res);
       res.render('home',context);
