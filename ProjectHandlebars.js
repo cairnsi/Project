@@ -41,7 +41,7 @@ app.get('/',function(req,res){
   res.render('home',context);
 });
 
-app.post('/', function(req,res){
+app.post('/', function(req,res,next){
   if(req.body.Name&& req.body.cityName && req.body.countryCode){
 	  req.session.name = req.body.Name;
 	  req.session.cityName = req.body.cityName;
@@ -58,11 +58,13 @@ app.post('/', function(req,res){
 	  
 	  var context = setContext(req,res);
       res.render('home',context);
+	  
     } else {
       if(response.statusCode >= 400 && response.statusCode < 500){
         var context= {};
 		context.error = "City not found. Please try again";
 		res.render('getSession',context);
+		
       }
       next(err);
     }
