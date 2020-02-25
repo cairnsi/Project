@@ -60,13 +60,14 @@ app.post('/', function(req,res,next){
       res.render('home',context);
 	  
     } else {
-      //if(response.statusCode >= 400 && response.statusCode < 500){
-        //var context= {};
-		//context.error = "City not found. Please try again";
-		//res.render('getSession',context);
+      if(response.statusCode >= 400 && response.statusCode < 500){
+        var context= {};
+		context.error = "City not found. Please try again";
+		res.render('getSession',context);
 		
-      //}
-      next(err);
+      }else{
+		next(err);
+	  }
     }
   });
 });
