@@ -48,26 +48,6 @@ app.post('/', function(req,res,next){
 	  return;
   }
   
-  /*request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
-    if(!err && response.statusCode < 400){
-	  var response = JSON.parse(body);
-      req.session.yourTemperature = Math.floor(response.main.temp - 273)+ " C";
-	  
-	  var context = setContext(req,res);
-      res.render('home',context);
-	  
-    } else {
-      if(response.statusCode >= 400 && response.statusCode < 500){
-        var context= {};
-		context.error = "City not found. Please try again";
-		res.render('getSession',context);
-		
-      }else{
-		next(err);
-	  }
-    }
-	
-  });*/
   var context = setContext(req,res);
 	res.render('home',context);
 });
@@ -93,7 +73,7 @@ app.post('/findWeather', function(req,res,next){
 			  var weatherMessage = "todays weather"
 			  context.weatherMessage = "It is "+ yourTemperature+ " C in "+req.body.cityName+ ". ";
 			  if(diffTemp>0){
-				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + "C warmer than Seattle";
+				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + " C warmer than Seattle";
 			  }else{
 				  context.weatherMessage = context.weatherMessage + " You should also consider Seattle. "+req.body.cityName+" is " + diffTemp + " colder than Seattle";
 			  }
@@ -109,6 +89,7 @@ app.post('/findWeather', function(req,res,next){
 		} else {
 		  if(response.statusCode >= 400 && response.statusCode < 500){
 			var context= {};
+			var context = setContext(req,res);
 			context.error = "City not found. Please try again";
 			res.render('traveled',context);
 			
