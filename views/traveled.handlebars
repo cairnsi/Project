@@ -1,3 +1,14 @@
 {{>header}}
 <h1>Traveled</h1>
+<h3>What city would you like to travel to?<h3>
+<p class = "error">{{error}}</p>
+<form action="/findWeather" method = "post">
+   <fieldset>
+	<label>City Name: </label>
+	<input type="text" name="cityName" id="cityName">
+	<input type="submit" id="sessionSubmit" value="sessionSubmit">
+   </fieldset>
+</form>
+<p class = "weatherMessage">{{weatherMessage}}</p>
+
 {{>footer}}
