@@ -93,7 +93,7 @@ app.post('/findWeather', function(req,res,next){
 			  var weatherMessage = "todays weather"
 			  context.weatherMessage = "It is "+ yourTemperature+ " C in "+req.body.cityName+ ". ";
 			  if(diffTemp>0){
-				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + " warmer than Seattle";
+				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + "C warmer than Seattle";
 			  }else{
 				  context.weatherMessage = context.weatherMessage + " You should also consider Seattle. "+req.body.cityName+" is " + diffTemp + " colder than Seattle";
 			  }
@@ -110,7 +110,7 @@ app.post('/findWeather', function(req,res,next){
 		  if(response.statusCode >= 400 && response.statusCode < 500){
 			var context= {};
 			context.error = "City not found. Please try again";
-			res.render('getSession',context);
+			res.render('traveled',context);
 			
 		  }else{
 			next(err);
