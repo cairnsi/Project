@@ -77,7 +77,6 @@ app.post('/findWeather', function(req,res,next){
 	  return;
   }
   var context = setContext(req,res);
-  res.render('traveled',context);
   if(req.body.cityName){
 	 request('http://api.openweathermap.org/data/2.5/weather?q='+req.body.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
 		if(!err && response.statusCode < 400){
