@@ -121,7 +121,7 @@ app.post('/stock', function(req,res,next){
 			res.render('hobbies',context);
 		  }else{
 			var key = Object.keys(response["Time Series (5min)"])[0];
-			context.stockMessage = "The current price is " + response["Time Series (5min)"][key]["4. close"];
+			context.stockMessage = "The current price is $" + response["Time Series (5min)"][key]["4. close"];
 			res.render('hobbies',context);
 		  }
 		   
