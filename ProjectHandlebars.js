@@ -111,7 +111,7 @@ app.post('/stock', function(req,res,next){
   }
   
   if(req.body.stockTicker){
-	 request( "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+stockTicker+"&apikey="+ credentials.stockApiKey, function(err, response, body){
+	 request( "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+req.body.stockTicker+"&apikey="+ credentials.stockApiKey, function(err, response, body){
 		if(!err && response.statusCode < 400){
 		  var response = JSON.parse(body);
 		  var context = setContext(req,res);
