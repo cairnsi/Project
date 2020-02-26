@@ -91,7 +91,13 @@ app.post('/findWeather', function(req,res,next){
 			  
 			  var diffTemp = yourTemperature - myTemperature;
 			  var weatherMessage = "todays weather"
-			  context.weatherMessage = "It is "+ yourTemperature+ "in "+req.body.cityName;
+			  context.weatherMessage = "It is "+ yourTemperature+ " in "+req.body.cityName+ ". ";
+			  if(diffTemp>0){
+				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + " warmer than Seattle";
+			  }else{
+				  context.weatherMessage = context.weatherMessage + " You should also consider Seattle. "+req.body.cityName+" is " + diffTemp + " colder than Seattle";
+			  }
+			 
 			  res.render('traveled',context);
 			  
 			} else {
