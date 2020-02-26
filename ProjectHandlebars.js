@@ -115,7 +115,7 @@ app.post('/stock', function(req,res,next){
 		if(!err && response.statusCode < 400){
 		  var response = JSON.parse(body);
 		  var context = setContext(req,res);
-		  context.stockMessage = JSON.stringify(response["Time Series (5min)"]);
+		  context.stockMessage = body;//JSON.stringify(response["Time Series (5min)"]);
 		  res.render('hobbies',context);
 		   
 		  
