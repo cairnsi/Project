@@ -110,7 +110,7 @@ app.post('/stock', function(req,res,next){
 	  return;
   }
   
-  if(req.body.stock){
+  if(req.body.stockTicker){
 	 request( "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+stockTicker+"&apikey="+ credentials.stockApiKey, function(err, response, body){
 		if(!err && response.statusCode < 400){
 		  var response = JSON.parse(body);
