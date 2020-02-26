@@ -29,7 +29,6 @@ function setContext(req, res){
 	context.name = req.session.name;
 	context.cityName = req.session.cityName;
 	context.countryCode = req.session.countryCode;
-	context.yourTemperature = req.session.yourTemperature;
 	return context;
 }
 
@@ -51,7 +50,7 @@ app.post('/', function(req,res,next){
 	  return;
   }
   
-  request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
+  /*request('http://api.openweathermap.org/data/2.5/weather?q='+req.session.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
     if(!err && response.statusCode < 400){
 	  var response = JSON.parse(body);
       req.session.yourTemperature = Math.floor(response.main.temp - 273)+ " C";
@@ -68,7 +67,9 @@ app.post('/', function(req,res,next){
       }else{
 		next(err);
 	  }
-    }
+    }*/
+	var context = setContext(req,res);
+	res.render('home',context);
   });
 });
 
