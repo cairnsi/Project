@@ -67,10 +67,11 @@ app.post('/', function(req,res,next){
       }else{
 		next(err);
 	  }
-    }*/
-	var context = setContext(req,res);
+    }
+	
+  });*/
+  var context = setContext(req,res);
 	res.render('home',context);
-  });
 });
 
 app.get('/professional',function(req,res){
