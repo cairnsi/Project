@@ -81,17 +81,17 @@ app.post('/findWeather', function(req,res,next){
 	 request('http://api.openweathermap.org/data/2.5/weather?q='+req.body.cityName+'&APPID=' + credentials.owApiKey, function(err, response, body){
 		if(!err && response.statusCode < 400){
 		  var response = JSON.parse(body);
-		  var yourTemperature = Math.floor(response.main.temp - 273)+ " C";
+		  var yourTemperature = Math.floor(response.main.temp - 273);
 		  
 		   request('http://api.openweathermap.org/data/2.5/weather?q=seattle&APPID=' + credentials.owApiKey, function(err, response, body){
 			if(!err && response.statusCode < 400){
 		      var context = setContext(req,res);
 			  var response = JSON.parse(body);
-			  var myTemperature = Math.floor(response.main.temp - 273)+ " C";
+			  var myTemperature = Math.floor(response.main.temp - 273);
 			  
 			  var diffTemp = yourTemperature - myTemperature;
 			  var weatherMessage = "todays weather"
-			  context.weatherMessage = "It is "+ yourTemperature+ " in "+req.body.cityName+ ". ";
+			  context.weatherMessage = "It is "+ yourTemperature+ " C in "+req.body.cityName+ ". ";
 			  if(diffTemp>0){
 				  context.weatherMessage = context.weatherMessage + " That sounds nice! That is " + diffTemp + " warmer than Seattle";
 			  }else{
