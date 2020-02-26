@@ -90,7 +90,7 @@ app.post('/findWeather', function(req,res,next){
 			  
 			  var diffTemp = yourTemperature - myTemperature;
 			  var weatherMessage = "todays weather"
-			  context.weatherMessage = "It is "+ yourTemperature+ "in "+req.body.cityName;
+			  //context.weatherMessage = "It is "+ yourTemperature+ "in "+req.body.cityName;
 			  res.render('traveled',context);
 			  
 			} else {
