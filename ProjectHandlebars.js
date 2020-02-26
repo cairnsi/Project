@@ -27,8 +27,7 @@ function checkSession(req, res){
 function setContext(req, res){
 	var context = {};
 	context.name = req.session.name;
-	context.cityName = req.session.cityName;
-	context.countryCode = req.session.countryCode;
+	context.age = req.session.age;
 	return context;
 }
 
@@ -41,10 +40,9 @@ app.get('/',function(req,res){
 });
 
 app.post('/', function(req,res,next){
-  if(req.body.Name&& req.body.cityName && req.body.countryCode){
+  if(req.body.Name&& req.body.age){
 	  req.session.name = req.body.Name;
-	  req.session.cityName = req.body.cityName;
-	  req.session.countryCode = req.body.countryCode;
+	  req.session.cityName = req.body.age;
   }
   if(checkSession(req,res)){
 	  return;
