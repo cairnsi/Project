@@ -1,3 +1,13 @@
 {{>header}}
 <h1>Hobbies</h1>
+<h3>What stock would you like to know about<h3>
+<p class = "error">{{error}}</p>
+<form action="/stock" method = "post">
+   <fieldset>
+	<label>Stock Ticker: </label>
+	<input type="text" name="stockTicker" id="stockTicker">
+	<input type="submit" id="stockSubmit" value="stockSubmit">
+   </fieldset>
+</form>
+<p class = "stockMessage">{{stockMessage}}</p>
 {{>footer}}

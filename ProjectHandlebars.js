@@ -105,6 +105,38 @@ app.post('/findWeather', function(req,res,next){
   }
 });
 
+app.post('/stock', function(req,res,next){
+  if(checkSession(req,res)){
+	  return;
+  }
+  
+  if(req.body.stock){
+	 request( "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+stockTicker+"&apikey="+ credentials.stockApiKey, function(err, response, body){
+		if(!err && response.statusCode < 400){
+		  var response = JSON.parse(body);
+		  var context = setContext(req,res);
+		  context.stockMessage = body;
+		  res.render('hobbies',context);
+		   
+		  
+		} else {
+		  if(response.statusCode >= 400 && response.statusCode < 500){
+			var context = setContext(req,res);
+			context.error = "Stock ticker not found. Please try again";
+			res.render('hobbies',context);
+			
+		  }else{
+			next(err);
+		  }
+		}
+		
+	  });
+  }else{
+	var context = setContext(req,res);
+	res.render('hobbies',context);
+  }
+});
+
 app.get('/professional',function(req,res){
   if(checkSession(req,res)){
 	  return;
