@@ -132,7 +132,7 @@ app.post('/stock', function(req,res,next){
 		
 	  });
   }else{
-	var context = setContext(req,res);
+	var context ={};// setContext(req,res);
 	res.render('hobbies',context);
   }
 });
