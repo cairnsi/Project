@@ -6,12 +6,11 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var credentials = require('./credentials.js');
 var request = require('request');
-var path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(session({secret: credentials.sessionpwd}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
