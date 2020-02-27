@@ -4,6 +4,9 @@
  
  .links{
 	background-color: #b3ff66;
+	width: 75%;
+	margin-top:20px;
+	padding: 10px;
  }
  
  .pageLinks
@@ -11,6 +14,8 @@
     display: inline;
 	padding: 10px;
 	background-color: #b3ff66;
+	text-align: center;
+	margin:auto;
 
 }
  
