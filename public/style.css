@@ -5,3 +5,14 @@
  .pageLinks{
 	 display:inline;
  }
+ 
+ .HeaderWelcome{
+    text-decoration: none;
+    line-height: 1;
+    font-size: 37px;
+    letter-spacing: 3px;
+    color: #555555;
+    display: block;
+    position: relative;
+}
+ }
