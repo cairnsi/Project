@@ -25,5 +25,7 @@ function bindforward(){
 	});
 }
 
+window.onload = bindforward();
+
 window.onload = updateCarousel();
 
