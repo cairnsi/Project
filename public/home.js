@@ -7,11 +7,11 @@ images[1] = "images/sail.jpeg";
 images[2] = "images/ski2.png";
 
 function updateCarousel(){
-	document.carousel.src = images[i];
 	i++;
 	if(i>2){
 		i=0;
 	}
+	document.carousel.src = images[i];
 	setTimeout("updateCarousel()", time);
 }
 
