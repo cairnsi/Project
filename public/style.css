@@ -10,6 +10,19 @@
 	text-align: center;
  }
  
+ .pageLinks
+{
+    font-size: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: none;
+    text-decoration: none;
+    color: #123456;
+    display: inline-block;
+    padding: 0 0;
+
+}
+ 
  .HeaderWelcome{
     text-align: center;
  }
