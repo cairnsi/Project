@@ -2,12 +2,9 @@
 	 color: red;
  }-
  
- .links{
-	background-color: #b3ff66;
-	width: 75%;
-	margin-top:20px;
-	padding: 10px;
- }
+.carousel{
+	margin:auto;
+}
  
  .pageLinks
 {
@@ -28,10 +25,4 @@
 	width: 100%;
 	margin-top:20px;
 	padding: 10px;
-}
-.inner-content{
-	background-color: blue;
-	width: 75%;
-	text-align: center;
-	margin:auto;
 }
