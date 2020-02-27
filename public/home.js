@@ -23,6 +23,16 @@ function moveForward(event){
 	document.carousel.src = images[i];
 }
 
+function moveBack(event){
+	i--;
+	if(i<0){
+		i=2;
+	}
+	document.carousel.src = images[i];
+}
+
+
+document.getElementById("back").addEventListener("click",moveBack);
 
 document.getElementById("forward").addEventListener("click",moveForward);
 window.onload = updateCarousel();
