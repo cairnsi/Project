@@ -8,7 +8,9 @@
  
  .pageLinks
 {
-    display: inline
+    display: inline;
+	padding: 10px;
+	background-color: #b3ff66;
 
 }
  
