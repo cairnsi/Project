@@ -1,32 +1,3 @@
-table, th, td {
-  border: 1px solid black;
-}
-table tbody th{
-	font-style: italic;
-	font-weight: normal;
-}
-table tbody tr{
-	background:mediumseagreen;
-}
-table tbody tr:nth-of-type(2), tr:nth-of-type(4){
-	background: aqua;
-}
-.outer-content{
-	background-color: pink;
-	width: 75%;
-	margin-top:20px;
-	padding: 10px;
-}
-.inner-content{
-	background-color: blue;
-	width: 75%;
-	text-align: center;
-	margin:auto;
-}
-form p{
-	border: 1.5px solid black;
-	padding: 5px;
-}
- .error{
+.error{
 	 color: red;
  }
