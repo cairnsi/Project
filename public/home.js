@@ -1,9 +1,9 @@
 
 var i = 0;
 var images = [];
-var time = 2000;
+var time = 3500;
 images[0] = "images/ski1.jpeg";
-images[1] = "inages/sail.jpeg";
+images[1] = "images/sail.jpeg";
 images[2] = "images/ski2.png";
 
 function updateCarousel(){
