@@ -15,17 +15,15 @@ function updateCarousel(){
 	setTimeout("updateCarousel()", time);
 }
 
-function bindforward(){
-	document.getElementById("forward").addEventListener('click', function fowardButton(event) {
-		i++;
-		if(i>2){
-			i=0;
-		}
-		document.carousel.src = images[i];
-	});
+function moveForward(event){
+	i++;
+	if(i>2){
+		i=0;
+	}
+	document.carousel.src = images[i];
 }
 
-window.onload = bindforward();
 
+document.getElementById("forward").addEventListener("click",moveForward);
 window.onload = updateCarousel();
 
