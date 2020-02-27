@@ -22,3 +22,16 @@
  .HeaderWelcome{
     text-align: center;
  }
+ 
+.outer-content{
+	background-color: pink;
+	width: 75%;
+	margin-top:20px;
+	padding: 10px;
+}
+.inner-content{
+	background-color: blue;
+	width: 75%;
+	text-align: center;
+	margin:auto;
+}
