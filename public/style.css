@@ -1,12 +1,16 @@
 .error{
 	 color: red;
- }-
+ }
  
 #carousel{
 	display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
+}
+#back{
+  margin-left: 40%;
+  width: 10%;
 }
  
  .pageLinks
