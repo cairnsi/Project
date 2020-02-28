@@ -1,7 +1,10 @@
 .error{
 	 color: red;
  }
- 
+
+#carouselTitle{
+	margin-left:30%
+}
 #carousel{
 	display: block;
   margin-left: auto;
@@ -11,6 +14,21 @@
 #back{
   margin-left: 40%;
   width: 10%;
+}
+#forward{
+  width: 10%;
+}
+#aboutMe{
+	margin-left: 35%;
+	text-decoration: underline;
+}
+#scroll{
+	width:30%;
+	height:250px;
+	line-height:3em;
+	overflow:auto;
+	padding:5px;
+	margin-left:35%;
 }
  
  .pageLinks
