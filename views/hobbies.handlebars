@@ -1,12 +1,26 @@
 {{>header}}
-<h1>Hobbies</h1>
-<h3>What stock would you like to know about<h3>
+<h1 id="hobbiesHeader">Some of my hobbies!</h1>
+<h2 class="hobbiesTitle">Skiing</h2>
+<p class="hobbiesText">I have been skiing since I was in 8th grade. I love it and love to travel to go ski.</p>
+<img class="hobbiesImages" src="/images/ski2.png">
+<h2 class="hobbiesTitle">Mountain Biking</h2>
+<p class="hobbiesText">Mountain biking is also a favorite activity of mine. It is my summer version of skiing. I also really enjoy
+that you can mountain bike in nice weather. I frequently travel up to whistler to go biking. Riding at the ski resorts where you can take the chair up is my favorite since I am pretty lazy and don't like having to pedal up.</p>
+<img class="hobbiesImages" src="/images/mtbJump.jpeg">
+<h2 class="hobbiesTitle">Taking my dogs out</h2>
+<p class="hobbiesText">I have two dogs. I really love taking them out on walks and just hanging out outside with them. I also like to take them mountain biking. Sometimes they will hit the jumps with me which is pretty fun to see. </p>
+<img class="hobbiesImages" src="/images/dogs.jpeg">
+<br>
+<img class="hobbiesImages" src="/images/cosmojumping.png">
+<h2 class="hobbiesTitle">Stocks</h2>
+<p class="hobbiesText">I also like to keep up to date on stocks and the market. This mainly comes as a means to better my life. I try and save and get my money to work for me.</p>
+<h3>Enter a stock ticker and find the current price<h3>
 <p class = "error">{{error}}</p>
 <form action="/stock" method = "post">
    <fieldset>
 	<label>Stock Ticker: </label>
 	<input type="text" name="stockTicker" id="stockTicker">
-	<input type="submit" id="stockSubmit" value="stockSubmit">
+	<input type="submit" id="stockSubmit" value="Submit">
    </fieldset>
 </form>
 <p class = "stockMessage">{{stockMessage}}</p>
