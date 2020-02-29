@@ -1,4 +1,16 @@
 {{>header}}
+<h2>Stocks</h2>
+<p>I like to keep up to date on stocks and the market. This mainly comes as a means to better my life. I try and save and get my money to work for me.</p>
+<h3>Enter a stock ticker and find the current price<h3>
+<p class = "error">{{error}}</p>
+<form action="/stock" method = "post">
+   <fieldset>
+	<label>Stock Ticker: </label>
+	<input type="text" name="stockTicker" id="stockTicker">
+	<input type="submit" id="stockSubmit" value="Submit">
+   </fieldset>
+</form>
+<p class = "stockMessage">{{stockMessage}}</p>
 <h1 id="hobbiesHeader">Some of my hobbies!</h1>
 <h2 class="hobbiesTitle">Skiing</h2>
 <p class="hobbiesText">I have been skiing since I was in 8th grade. I love it and love to travel to go ski.</p>
@@ -12,16 +24,5 @@ that you can mountain bike in nice weather. I frequently travel up to whistler t
 <img class="hobbiesImages" src="/images/dogs.jpeg">
 <br>
 <img class="hobbiesImages" src="/images/cosmojumping.png">
-<h2 class="hobbiesTitle">Stocks</h2>
-<p class="hobbiesText">I also like to keep up to date on stocks and the market. This mainly comes as a means to better my life. I try and save and get my money to work for me.</p>
-<h3>Enter a stock ticker and find the current price<h3>
-<p class = "error">{{error}}</p>
-<form action="/stock" method = "post">
-   <fieldset>
-	<label>Stock Ticker: </label>
-	<input type="text" name="stockTicker" id="stockTicker">
-	<input type="submit" id="stockSubmit" value="Submit">
-   </fieldset>
-</form>
-<p class = "stockMessage">{{stockMessage}}</p>
+<br>
 {{>footer}}
