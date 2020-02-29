@@ -17,6 +17,12 @@
   margin-right: auto;
   width: 40%;
 }
+.travelImages{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 #back{
   margin-left: 40%;
   width: 10%;
@@ -42,13 +48,26 @@
 	text-align: center;
 	text-decoration: underline;
 }
+#travelHeader{
+	text-align: center;
+	text-decoration: underline;
+}
 .hobbiesText{
 	display: block;
   margin-left: 30%;
   width: 40%;
 	
 }
+.travelText{
+	display: block;
+  margin-left: 30%;
+  width: 40%;
+	
+}
 .hobbiesTitle{
+	margin-left: 30%;
+}
+.travelTitle{
 	margin-left: 30%;
 }
 #footer{

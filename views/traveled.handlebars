@@ -1,14 +1,23 @@
 {{>header}}
-<h1>Traveled</h1>
 <h3>What city would you like to travel to?</h3>
 <p class = "error">{{error}}</p>
 <form action="/findWeather" method = "post">
    <fieldset>
 	<label>City Name: </label>
 	<input type="text" name="cityName" id="cityName">
-	<input type="submit" id="weatherSubmit" value="weatherSubmit">
+	<input type="submit" id="weatherSubmit" value="Submit">
    </fieldset>
 </form>
 <p class = "weatherMessage">{{weatherMessage}}</p>
-
+<h1 id="travelHeader">Places I have traveled</h1>
+<h2 class="travelTitle">Hawaii</h2>
+<p class="travelText">I have been to Hawaii a couple times now. It is awesome. I have tried surfing there as well as went on an atv tour. Also just spent a lot of time at the beach</p>
+<img class="travelImages" src="/images/hawaii.jpeg">
+<h2 class="travelTitle">Germany</h2>
+<p class="travelText">Germany was a lot of fun. My wife and I went there for a confrence she had for work. It was an automation confrence, so we saw a lot of robot arms and other robotic equipment. We also went around Berlin a little. It was a great time.</p>
+<img class="travelImages" src="/images/germany.jpeg">
+<h2 class="travelTitle">Tuscon</h2>
+<p class="travelText">Tuscon was really cool. I did not realize how many cactus there would be. I was thinking ther would be one every so often. Instead there are whole forests of them. If they were trees it would be some of the most dense forests I have seen.</p>
+<img class="travelImages" src="/images/tuscon.jpeg">
+<br>
 {{>footer}}
